@@ -1,0 +1,6 @@
+#!/bin/sh
+# Scan untuk secrets sebelum commit
+git secrets --scan
+
+# Lint dan format
+npx lint-staged
