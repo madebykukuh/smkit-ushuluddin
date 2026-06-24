@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SMKIT Ushuluddin Landing Page
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Next.js 15 landing page showcasing SMKIT Ushuluddin’s identity, dual‑curriculum strengths, and registration info. Designed per DESIGN.md and FRONTEND.md: Tailwind, shadcn/ui, strict TypeScript, WCAG 2.1 AA.
+
+## Development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Hero, Admissions, Curriculum, Quality, Philosophy, Gallery sections (`src/components/sections`)
+- Navbar, Footer, Countdown banner (`src/components/layout`)
+- Reusable UI primitives (button, card, avatar, etc.) in `src/components/ui`
+- Accessible loading, error & empty states for data fetches
+- Responsive, mobile-first grid layout
 
-## Learn More
+## Design System
 
-To learn more about Next.js, take a look at the following resources:
+- Colors, spacing, typography, radius from **DESIGN.md** (CSS variables)
+- No hard-coded hex, no `<img>` tags – use `next/image`
+- One primary CTA per section, motion ≤ 300 ms, alt text mandatory
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Testing & Lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint   # eslint
+npm run build  # production build
+```
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deploy to Vercel or any Node host; the repo is ready for static export.
