@@ -35,11 +35,8 @@ export default function Gallery() {
           Kehidupan Sekolah
         </p>
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-dark">
-          Lihat Sendiri
+          Galeri SMKIT Ushuluddin
         </h2>
-        <p className="text-text-muted text-base mt-3">
-          Kehidupan di SMKIT Ushuluddin dalam gambar.
-        </p>
       </div>
 
       <div className="max-w-6xl mx-auto px-6 columns-2 md:columns-3 gap-4 space-y-4">

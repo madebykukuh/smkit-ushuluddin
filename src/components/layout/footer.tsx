@@ -43,6 +43,7 @@ export default function Footer() {
           <p className="text-sm font-semibold text-background mb-4">Kontak</p>
           <ul className="space-y-2 text-sm text-muted leading-relaxed">
             <li>
+              <span className="text-muted/40">Alamat: </span>
               Tambak Anyar Ilir, Kec. Martapura Timur, Kab. Banjar, Kalimantan
               Selatan
             </li>

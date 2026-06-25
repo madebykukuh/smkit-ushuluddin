@@ -15,7 +15,7 @@ const digitalList = [
 const pesantrenList = [
   "Shalat berjamaah 5 waktu, shalat dhuha & tahajud",
   "Kajian kitab akhlak rutin",
-  "Pembinaan Al-Quran & khitabah",
+  "Pembinaan Al-Quran & muhadhoroh",
   "Lingkungan asrama yang terstruktur dan terpantau",
 ];
 
@@ -51,13 +51,12 @@ export default function Curriculum() {
             Kompetensi Bisnis Digital
           </Badge>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-4">
-            Belajar Berdagang di Era Digital — Lewat Praktik, Bukan Teori.
+            Belajar Skill Era Digital — Lewat Praktik, Bukan Teori.
           </h3>
           <p className="text-muted-foreground text-base leading-relaxed mb-8">
-            Di lab komputer kami, siswa tidak duduk mendengarkan. Mereka
-            mengelola toko online nyata, merancang kampanye iklan, membuat
-            konten promosi, dan menganalisis data penjualan — sejak tahun
-            pertama.
+            Di kelas, siswa tidak duduk mendengarkan. Mereka belajar mengelola
+            toko online, merancang kampanye iklan, membuat konten promosi, dan
+            menganalisis data penjualan.
           </p>
           <ul className="space-y-3">
             {digitalList.map((item) => (
@@ -80,13 +79,12 @@ export default function Curriculum() {
             Program Pesantren
           </Badge>
           <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-4">
-            Karakter Bukan Pelajaran Tambahan. Ia Adalah Cara Hidup.
+            Membentuk Akhlak Mulia Melalui Kebiasaan Sehari-hari.
           </h3>
           <p className="text-muted-foreground text-base leading-relaxed mb-8">
-            Seluruh siswa tinggal di asrama — bukan sebagai aturan tambahan,
-            tapi karena kami percaya karakter dibentuk dari kebiasaan. Shalat
-            berjamaah, kajian kitab, dan interaksi sehari-hari yang terjaga
-            adalah kurikulum yang tidak tertulis di silabus, tapi tercetak di
+            Kami percaya karakter dibentuk dari kebiasaan. Shalat berjamaah,
+            kajian kitab, dan interaksi sehari-hari yang terjaga adalah
+            kurikulum yang tidak tertulis di silabus, tapi tercetak di
             kepribadian.
           </p>
           <ul className="space-y-3">

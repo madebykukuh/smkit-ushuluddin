@@ -68,14 +68,16 @@ export default function Admissions() {
       </div>
 
       {/* Key Facts Grid */}
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 mb-20 place-items-center">
+      <div className="max-w-4xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-20">
         {facts.map((f) => (
           <div
             key={f.label}
-            className="bg-surface rounded-2xl p-6 text-center border border-secondary/60 w-full max-w-[180px]"
+            className="bg-surface rounded-2xl p-6 text-center border border-secondary/60 flex flex-col justify-center items-center min-h-[120px] w-full transition-all hover:shadow-sm"
           >
-            <p className="text-2xl font-bold text-primary mb-1">{f.value}</p>
-            <p className="text-xs text-muted-foreground font-medium">
+            <p className="text-xl md:text-2xl font-bold text-primary mb-1 tracking-tight">
+              {f.value}
+            </p>
+            <p className="text-xs text-muted-foreground font-medium leading-normal max-w-[150px]">
               {f.label}
             </p>
           </div>
@@ -158,8 +160,8 @@ export default function Admissions() {
           Tertarik untuk Bergabung?
         </h3>
         <p className="text-muted-foreground text-base mb-8 leading-relaxed">
-          Hubungi panitia SPMB untuk informasi lebih lanjut atau memulai proses
-          pendaftaran. Kami siap menjawab pertanyaan Anda.
+          Masih punya pertanyaan atau ragu terkait jurusan dan sistem asrama
+          kami? Jangan sungkan, sapa tim admin kami.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto mb-4">
