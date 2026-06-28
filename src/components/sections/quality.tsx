@@ -17,7 +17,7 @@ const testimonials = [
     quote:
       "Saya pilih SMKIT Ushuluddin karena gratis SPP sangat membantu. Tapi yang tidak saya duga, gurunya benar-benar serius mendampingi.",
     name: "Bapak A.R.",
-    role: "Wali Murut · Karang Intan",
+    role: "Wali Murid · Karang Intan",
   },
   {
     quote:
