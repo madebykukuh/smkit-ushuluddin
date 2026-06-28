@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Award, ChevronDown } from "lucide-react";
+import { Reveal } from "@/components/common/reveal";
 
 const facts = [
   { value: "30", label: "Kuota Siswa / Angkatan" },
@@ -177,66 +178,71 @@ export default function Admissions() {
 
       {/* FAQ */}
       <div className="max-w-6xl mx-auto px-6 mb-20">
-        <h3 className="text-xl font-bold text-foreground mb-8">
-          Pertanyaan Umum
-        </h3>
+        <Reveal>
+          <h3 className="text-xl font-bold text-foreground mb-8">
+            Pertanyaan Umum
+          </h3>
+        </Reveal>
         <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <FAQItem
-              key={idx}
-              faq={faq}
-              isOpen={openFaq === idx}
-              onOpen={() => setOpenFaq(idx)}
-              idx={idx}
-            />
+            <Reveal key={idx} delayMs={idx * 80}>
+              <FAQItem
+                faq={faq}
+                isOpen={openFaq === idx}
+                onOpen={() => setOpenFaq(idx)}
+                idx={idx}
+              />
+            </Reveal>
           ))}
         </div>
       </div>
 
       {/* Closing CTA */}
       <div className="max-w-2xl mx-auto px-6 text-center">
-        <h3 className="text-2xl font-bold text-foreground mb-3">
-          Masih Memiliki Pertanyaan?
-        </h3>
-        <p className="text-muted-foreground text-base mt-8 mb-10 leading-relaxed">
-          Kalau ingin mengenal sekolah kami lebih dekat, silakan berbincang
-          dengan panitia melalui WhatsApp.
-        </p>
+        <Reveal>
+          <h3 className="text-2xl font-bold text-foreground mb-3">
+            Masih Memiliki Pertanyaan?
+          </h3>
+          <p className="text-muted-foreground text-base mt-8 mb-10 leading-relaxed">
+            Kalau ingin mengenal sekolah kami lebih dekat, silakan berbincang
+            dengan panitia melalui WhatsApp.
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 w-full mb-6">
-          <input
-            id="candidate-name"
-            type="text"
-            placeholder="Masukkan nama calon siswa"
-            className="input-primary"
-          />
-          <button
-            type="button"
-            className="btn-hero whitespace-nowrap"
-            onClick={() => {
-              const name = (
-                document.getElementById("candidate-name") as HTMLInputElement
-              ).value.trim();
-              const n = encodeURIComponent(name || "Calon Siswa");
-              const waWindow = window.open(
-                `https://wa.me/6282350182358?text=Halo%20Panitia%20SPMB%20SMKIT%20Ushuluddin,%20saya%20ingin%20mendaftarkan%20anak%20saya%20bernama%20${n}.`,
-                "_blank",
-              );
-              if (waWindow) waWindow.opener = null;
-            }}
-          >
-            Hubungi Panitia
-          </button>
-        </div>
-        <p className="text-xs text-muted-foreground">
-          Atau langsung via WhatsApp:
-          <a
-            href="https://wa.me/6282350182358"
-            className="text-primary hover:underline ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-          >
-            +62 823-5018-2358
-          </a>
-        </p>
+          <div className="flex flex-col sm:flex-row gap-4 w-full mb-6">
+            <input
+              id="candidate-name"
+              type="text"
+              placeholder="Masukkan nama calon siswa"
+              className="input-primary"
+            />
+            <button
+              type="button"
+              className="btn-hero whitespace-nowrap"
+              onClick={() => {
+                const name = (
+                  document.getElementById("candidate-name") as HTMLInputElement
+                ).value.trim();
+                const n = encodeURIComponent(name || "Calon Siswa");
+                const waWindow = window.open(
+                  `https://wa.me/6282350182358?text=Halo%20Panitia%20SPMB%20SMKIT%20Ushuluddin,%20saya%20ingin%20mendaftarkan%20anak%20saya%20bernama%20${n}.`,
+                  "_blank",
+                );
+                if (waWindow) waWindow.opener = null;
+              }}
+            >
+              Hubungi Panitia
+            </button>
+          </div>
+          <p className="text-xs text-muted-foreground">
+            Atau langsung via WhatsApp:
+            <a
+              href="https://wa.me/6282350182358"
+              className="text-primary hover:underline ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              +62 823-5018-2358
+            </a>
+          </p>
+        </Reveal>
       </div>
     </section>
   );
