@@ -34,8 +34,7 @@ export default function Curriculum() {
           <p className="text-muted-foreground text-base mt-4 leading-relaxed">
             Di SMKIT Ushuluddin, siswa belajar keterampilan untuk dunia kerja
             sekaligus membiasakan akhlak, disiplin, dan tanggung jawab melalui
-            kehidupan pesantren. Keduanya berjalan berdampingan dalam keseharian
-            belajar.
+            kehidupan pesantren.
           </p>
         </Reveal>
       </div>
