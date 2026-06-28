@@ -79,7 +79,7 @@ const faqs = [
   },
   {
     q: "Di mana lokasi SMKIT Ushuluddin?",
-    a: "Di Kecamatan Martapura Timur, Kabupaten Banjar, Provinsi Kalimantan Selatan. Dapat diakses kendaraan roda dua maupun roda empat.",
+    a: "Di Tambak Anyar Ilir, Kec. Martapura Timur, Kab. Banjar, Kalimantan Selatan. Dapat diakses kendaraan roda dua maupun roda empat.",
   },
   {
     q: "Apa itu Konsentrasi Bisnis Digital?",
