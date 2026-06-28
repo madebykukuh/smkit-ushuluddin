@@ -65,11 +65,11 @@ export default function Quality() {
         </Reveal>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 items-stretch">
         {testimonials.map((t, idx) => (
           <Reveal key={idx} delayMs={idx * 80}>
-            <Card className="bg-surface border border-secondary/60 rounded-2xl p-8 flex flex-col justify-between shadow-none hover:shadow-md transition-shadow">
-              <div>
+            <Card className="bg-surface border border-secondary/60 rounded-2xl p-8 flex flex-col justify-between h-full shadow-none hover:shadow-md transition-shadow">
+              <div className="flex-1">
                 <Quote className="w-7 h-7 text-primary/20 mb-6" />
                 <p className="text-foreground text-sm leading-relaxed italic">
                   {t.quote}
@@ -126,7 +126,7 @@ export default function Quality() {
           <Card className="bg-secondary/20 border border-primary/15 rounded-2xl p-6 md:p-10">
             <div className="flex flex-col md:flex-row gap-10 items-center">
               <div className="w-full md:w-[42%]">
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-secondary/20">
+                <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-secondary/20 relative">
                   <Image
                     src="/images/gallery/gallery-juara.webp"
                     alt="Siswa SMKIT Ushuluddin menerima penghargaan kompetisi"
@@ -134,6 +134,14 @@ export default function Quality() {
                     width={800}
                     height={600}
                   />
+                  <div className="absolute bottom-2 right-2 p-3 bg-black/40 backdrop-blur-sm rounded-lg">
+                    <p className="text-white text-sm font-semibold">
+                      Akhmad Alfi
+                    </p>
+                    <p className="text-white/80 text-xs">
+                      XII &ndash; Pemasaran
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="w-full md:w-[58%]">

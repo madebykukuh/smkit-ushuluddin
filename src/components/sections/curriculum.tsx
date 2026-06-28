@@ -6,24 +6,24 @@ import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/common/reveal";
 
 const digitalList = [
-  "Pengelolaan marketplace (Tokopedia, Shopee, TikTok Shop)",
-  "Periklanan digital & optimasi SEO",
-  "Produksi konten & copywriting",
-  "Analisis data bisnis dasar",
-  "Portofolio digital personal sejak Kelas XI",
+  "Mengelola toko online di marketplace",
+  "Membuat foto, video, dan materi promosi produk",
+  "Belajar mengenalkan produk melalui media sosial dan internet",
+  "Memahami cara melayani pelanggan dengan baik",
+  "Menyusun ide usaha dan membangun portofolio sejak kelas XI",
 ];
 
 const pesantrenList = [
   "Shalat berjamaah 5 waktu, shalat dhuha & tahajud",
   "Kajian kitab akhlak rutin",
   "Pembinaan Al-Quran & muhadhoroh",
-  "Lingkungan asrama yang terstruktur dan terpantau",
+  "Tinggal di lingkungan asrama yang tertib dan saling membimbing.",
 ];
 
 export default function Curriculum() {
   return (
     <section id="kurikulum" className="bg-surface py-24">
-      <div className="max-w-xl text-center mx-auto mb-20 px-6">
+      <div className="max-w-[720px] text-center mx-auto mb-20 px-6">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
             Kurikulum
@@ -32,8 +32,10 @@ export default function Curriculum() {
             Dua Ekosistem. Satu Tujuan.
           </h2>
           <p className="text-muted-foreground text-base mt-4 leading-relaxed">
-            Bisnis digital dan kehidupan pesantren bukan dua hal yang bertolak
-            belakang. Di sini, keduanya dirancang saling menguatkan.
+            Di SMKIT Ushuluddin, siswa belajar keterampilan untuk dunia kerja
+            sekaligus membiasakan akhlak, disiplin, dan tanggung jawab melalui
+            kehidupan pesantren. Keduanya berjalan berdampingan dalam keseharian
+            belajar.
           </p>
         </Reveal>
       </div>
@@ -54,12 +56,12 @@ export default function Curriculum() {
               Kompetensi Bisnis Digital
             </Badge>
             <h3 className="text-2xl md:text-3xl font-bold text-foreground tracking-tight mb-4">
-              Belajar Skill Era Digital — Lewat Praktik, Bukan Teori.
+              Belajar Skill Era Digital.
             </h3>
             <p className="text-muted-foreground text-base leading-relaxed mb-8">
-              Di kelas, siswa tidak duduk mendengarkan. Mereka belajar mengelola
-              toko online, merancang kampanye iklan, membuat konten promosi, dan
-              menganalisis data penjualan.
+              Pembelajaran dilakukan melalui proyek dan praktik. Siswa belajar
+              mengenal cara menjual produk, membuat promosi, melayani pelanggan,
+              hingga mengelola usaha sederhana menggunakan media digital.
             </p>
             <ul className="space-y-4">
               {digitalList.map((item) => (

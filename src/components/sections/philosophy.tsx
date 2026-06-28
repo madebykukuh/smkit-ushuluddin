@@ -52,6 +52,14 @@ export default function Philosophy() {
                 Siswa per angkatan, setiap tahun
               </p>
             </div>
+            <div className="absolute -bottom-8 -right-8 bg-card rounded-2xl shadow-md px-5 py-4 border border-secondary/20 hidden sm:block">
+              <p className="text-sm font-semibold text-foreground leading-tight">
+                Muhammad Kukuh R. A., S.Kom.
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Kepala SMKIT Ushuluddin
+              </p>
+            </div>
           </div>
         </Reveal>
       </div>
