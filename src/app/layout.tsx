@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import CountdownBanner from "@/components/layout/countdown-banner";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
+import { SITE } from "@/lib/constants";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -44,7 +45,13 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "EducationalOrganization",
               name: "SMKIT Ushuluddin",
-              url: "https://smkitushuluddin.sch.id",
+              url: SITE.siteUrl,
+              identifier: {
+                "@type": "PropertyValue",
+                propertyID: "NPSN",
+                value: SITE.npsn,
+              },
+              sameAs: [SITE.instagramUrl],
               address: {
                 "@type": "PostalAddress",
                 addressLocality: "Martapura Timur",

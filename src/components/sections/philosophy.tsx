@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Philosophy() {
   return (
     <section id="filosofi" className="bg-background py-24">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Text column */}
         <div>
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
@@ -34,16 +34,16 @@ export default function Philosophy() {
         </div>
         {/* Image column */}
         <div className="relative">
-          <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-secondary shadow-lg">
+          <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-secondary border border-secondary/20 shadow-sm">
             <Image
-              src="/placeholder/philosophy-main.webp"
+              src="/images/school/philosophy-main.webp"
               alt="Interaksi guru dan siswa"
               className="w-full h-full object-cover"
               width={800}
               height={1067}
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 bg-secondary/64 rounded-2xl shadow-xl p-6 border border-secondary/50">
+          <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-md p-6 border border-secondary/20">
             <p className="text-5xl font-extrabold text-primary">30</p>
             <p className="text-sm text-muted-foreground mt-1 max-w-[120px] leading-tight">
               Siswa per angkatan, setiap tahun

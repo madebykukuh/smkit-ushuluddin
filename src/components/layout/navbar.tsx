@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetClose } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -26,12 +25,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-surface/90 border-b border-secondary/60">
+    <header className="sticky top-0 z-50 backdrop-blur-md bg-card/90 border-b border-secondary/20">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex items-center justify-between h-16">
           <a href="#beranda" className="flex items-center">
             <Image
-              src="/placeholder/logo.svg"
+              src="/logos/logo.svg"
               alt="SMKIT Ushuluddin"
               width={146}
               height={44}
@@ -39,36 +38,36 @@ export default function Navbar() {
             />
           </a>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => scrollToSection(link.href)}
-                className="text-sm text-text-muted hover:text-primary transition-colors font-medium"
+                className="nav-link"
               >
                 {link.label}
               </button>
             ))}
-            <Button
-              size="sm"
-              className="bg-primary text-white hover:bg-primary/90 ml-4"
+            <button
+              type="button"
               onClick={() => scrollToSection("#admissions")}
+              className="btn-navbar ml-4"
             >
               Informasi Pendaftaran
-            </Button>
+            </button>
           </nav>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden text-text-dark"
+            <button
+              type="button"
+              className="md:hidden p-2 text-foreground/80 hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               onClick={() => setIsOpen(true)}
+              aria-label="Buka menu navigasi"
             >
               <Menu className="h-5 w-5" />
-            </Button>
+            </button>
             <SheetContent side="right" className="w-[300px] p-6">
-              <SheetClose className="absolute top-4 right-4 rounded-md p-2 hover:bg-muted">
+              <SheetClose className="absolute top-4 right-4 rounded-md p-2 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">
                 <X className="h-4 w-4" />
                 <span className="sr-only">Close</span>
               </SheetClose>
@@ -77,17 +76,18 @@ export default function Navbar() {
                   <button
                     key={link.label}
                     onClick={() => scrollToSection(link.href)}
-                    className="text-left text-base text-text-dark hover:text-primary transition-colors font-medium"
+                    className="text-left text-base text-foreground hover:text-primary transition-colors font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   >
                     {link.label}
                   </button>
                 ))}
-                <Button
-                  className="bg-primary text-white hover:bg-primary/90 w-full"
+                <button
+                  type="button"
                   onClick={() => scrollToSection("#admissions")}
+                  className="btn-primary text-sm"
                 >
                   Informasi Pendaftaran
-                </Button>
+                </button>
               </div>
             </SheetContent>
           </Sheet>

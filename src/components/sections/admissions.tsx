@@ -1,6 +1,7 @@
 "use client";
 
-import { Award } from "lucide-react";
+import { useState } from "react";
+import { Award, ChevronDown } from "lucide-react";
 
 const facts = [
   { value: "30", label: "Kuota Siswa / Angkatan" },
@@ -8,6 +9,49 @@ const facts = [
   { value: "Terakreditasi", label: "BAN-PDM" },
   { value: "Pesantren", label: "Sistem Asrama Terintegrasi" },
 ];
+
+function FAQItem({
+  faq,
+  isOpen,
+  onOpen,
+  idx,
+}: {
+  faq: { q: string; a: string };
+  isOpen: boolean;
+  onOpen: () => void;
+  idx: number;
+}) {
+  const contentId = `faq-content-${idx}`;
+  return (
+    <div className="group border border-secondary/20 rounded-xl overflow-hidden bg-card transition-shadow duration-200 hover:shadow-sm">
+      <button
+        type="button"
+        onClick={onOpen}
+        className="w-full flex justify-between items-center px-6 py-5 cursor-pointer text-sm font-medium text-foreground hover:bg-secondary/10 transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        aria-expanded={isOpen}
+        aria-controls={contentId}
+      >
+        <span>{faq.q}</span>
+        <ChevronDown
+          className="w-5 h-5 text-primary transition-transform duration-200 ease-in-out shrink-0"
+          style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+        />
+      </button>
+      <div
+        id={contentId}
+        className="overflow-hidden transition-all duration-200 ease-in-out"
+        style={{
+          height: isOpen ? "auto" : "0",
+          opacity: isOpen ? 1 : 0,
+        }}
+      >
+        <div className="px-6 pb-5 pt-2 text-sm text-muted-foreground leading-relaxed">
+          {faq.a}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 const steps = [
   {
@@ -51,6 +95,8 @@ const faqs = [
 ];
 
 export default function Admissions() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
   return (
     <section id="admissions" className="bg-background py-24">
       <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
@@ -134,54 +180,49 @@ export default function Admissions() {
         <h3 className="text-xl font-bold text-foreground mb-8">
           Pertanyaan Umum
         </h3>
-        <div className="space-y-2">
+        <div className="space-y-4">
           {faqs.map((faq, idx) => (
-            <details
+            <FAQItem
               key={idx}
-              className="group border border-secondary/60 rounded-lg overflow-hidden"
-            >
-              <summary className="flex justify-between items-center px-5 py-4 cursor-pointer list-none text-sm font-medium text-foreground hover:bg-secondary/30">
-                <span>{faq.q}</span>
-                <span className="text-primary group-open:rotate-180 transition-transform">
-                  ▼
-                </span>
-              </summary>
-              <div className="px-5 pb-4 pt-2 text-sm text-muted-foreground leading-relaxed">
-                {faq.a}
-              </div>
-            </details>
+              faq={faq}
+              isOpen={openFaq === idx}
+              onOpen={() => setOpenFaq(idx)}
+              idx={idx}
+            />
           ))}
         </div>
       </div>
 
       {/* Closing CTA */}
-      <div className="max-w-lg mx-auto px-6 text-center">
+      <div className="max-w-2xl mx-auto px-6 text-center">
         <h3 className="text-2xl font-bold text-foreground mb-3">
-          Tertarik untuk Bergabung?
+          Masih Memiliki Pertanyaan?
         </h3>
-        <p className="text-muted-foreground text-base mb-8 leading-relaxed">
-          Masih punya pertanyaan atau ragu terkait jurusan dan sistem asrama
-          kami? Jangan sungkan, sapa tim admin kami.
+        <p className="text-muted-foreground text-base mt-8 mb-10 leading-relaxed">
+          Kalau ingin mengenal sekolah kami lebih dekat, silakan berbincang
+          dengan panitia melalui WhatsApp.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 max-w-sm mx-auto mb-4">
+        <div className="flex flex-col sm:flex-row gap-4 w-full mb-6">
           <input
             id="candidate-name"
             type="text"
-            placeholder="Nama calon siswa"
-            className="flex-1 h-10 px-3 border border-secondary rounded-full focus:outline-none focus:ring-2 focus:ring-primary text-sm"
+            placeholder="Masukkan nama calon siswa"
+            className="input-primary"
           />
           <button
-            className="h-10 px-5 bg-primary hover:bg-primary/90 text-white rounded-full font-medium whitespace-nowrap whatsapp-final-click"
+            type="button"
+            className="btn-hero whitespace-nowrap"
             onClick={() => {
               const name = (
                 document.getElementById("candidate-name") as HTMLInputElement
               ).value.trim();
               const n = encodeURIComponent(name || "Calon Siswa");
-              window.open(
+              const waWindow = window.open(
                 `https://wa.me/6282350182358?text=Halo%20Panitia%20SPMB%20SMKIT%20Ushuluddin,%20saya%20ingin%20mendaftarkan%20anak%20saya%20bernama%20${n}.`,
                 "_blank",
               );
+              if (waWindow) waWindow.opener = null;
             }}
           >
             Hubungi Panitia
@@ -191,7 +232,7 @@ export default function Admissions() {
           Atau langsung via WhatsApp:
           <a
             href="https://wa.me/6282350182358"
-            className="text-primary hover:underline ml-1"
+            className="text-primary hover:underline ml-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             +62 823-5018-2358
           </a>

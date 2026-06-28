@@ -128,3 +128,80 @@
     @apply font-sans;
   }
 }
+
+@layer components {
+  /* Hero CTA - Highest emphasis */
+  .btn-hero {
+    @apply h-12 px-7 bg-primary text-white rounded-full font-semibold text-[15px] transition-all duration-200 ease-in-out;
+  }
+  .btn-hero:hover {
+    @apply bg-primary/90;
+  }
+  .btn-hero:active {
+    @apply transform scale-[0.98];
+  }
+  .btn-hero:focus-visible {
+    @apply outline-none ring-2 ring-primary;
+  }
+
+  /* Navbar CTA - Secondary emphasis */
+  .btn-navbar {
+    @apply h-9 px-4 bg-primary text-white rounded-full font-medium text-[13px] transition-colors duration-200 ease-in-out;
+  }
+  .btn-navbar:hover {
+    @apply bg-primary/80;
+  }
+  .btn-navbar:active {
+    @apply transform scale-[0.97];
+  }
+  .btn-navbar:focus-visible {
+    @apply outline-none ring-2 ring-primary;
+  }
+
+  /* Primary CTA (Final section, general use) */
+  .btn-primary {
+    @apply h-12 px-6 bg-primary text-white rounded-full font-medium transition-all duration-200 ease-in-out;
+  }
+  .btn-primary:hover {
+    @apply bg-primary/80;
+  }
+  .btn-primary:active {
+    @apply transform scale-[0.98];
+  }
+  .btn-primary:focus-visible {
+    @apply outline-none ring-2 ring-primary;
+  }
+
+  .btn-secondary {
+    @apply h-12 px-6 bg-transparent border border-primary text-primary rounded-full font-medium transition-all duration-200 ease-in-out;
+  }
+  .btn-secondary:hover {
+    @apply bg-primary/10;
+  }
+  .btn-secondary:active {
+    @apply transform scale-[0.98];
+  }
+  .btn-secondary:focus-visible {
+    @apply outline-none ring-2 ring-primary;
+  }
+
+  .input-primary {
+    @apply flex-1 h-12 px-5 bg-card border border-secondary/30 rounded-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all duration-200 ease-in-out;
+  }
+
+  .card-primary {
+    @apply bg-card border border-secondary/20 rounded-full p-6;
+  }
+
+  .stat-primary {
+    @apply bg-white/80 backdrop-blur-md px-4 py-4 text-center;
+  }
+
+  .nav-link {
+    @apply text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200;
+  }
+
+  .nav-link:focus-visible {
+    @apply outline-none ring-2 ring-primary;
+  }
+}

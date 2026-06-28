@@ -2,9 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type Variants } from "framer-motion";
-
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -66,7 +64,7 @@ export default function HeroSection() {
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <Image
-          src="/placeholder/hero-bg.webp"
+          src="/images/hero/hero-bg.webp"
           alt="Suasana sekolah SMKIT Ushuluddin"
           fill
           className="object-cover object-center"
@@ -136,23 +134,22 @@ export default function HeroSection() {
 
             <motion.div
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3 pt-2"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2"
             >
-              <Button
-                size="lg"
-                className="rounded-full bg-primary hover:bg-primary/90 text-white px-7"
+              <button
+                type="button"
                 onClick={() => scrollToSection("admissions")}
+                className="btn-hero"
               >
                 Informasi Pendaftaran
-              </Button>
-              <Button
-                size="lg"
-                variant="ghost"
-                className="text-slate-700 hover:text-primary px-6"
+              </button>
+              <button
+                type="button"
                 onClick={() => scrollToSection("filosofi")}
+                className="btn-secondary"
               >
                 Kenali Kami
-              </Button>
+              </button>
             </motion.div>
           </motion.div>
         </div>

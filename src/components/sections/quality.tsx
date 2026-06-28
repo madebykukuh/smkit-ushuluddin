@@ -1,11 +1,12 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Quote } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
     quote:
-      "Anak saya awalnya tidak percaya diri dengan teknologi. Setelah masuk sini, di semester dua dia sudah bisa kelola toko online sendiri. Yang bikin tenang, akhlak dan shalatnya juga tetap terjaga.",
+      "Anak saya awalnya belum terbiasa menggunakan komputer untuk belajar. Sekarang sudah lebih percaya diri saat mengerjakan tugas digital.",
     name: "Ibu N.H.",
     role: "Wali Murid · Martapura Timur",
   },
@@ -17,9 +18,9 @@ const testimonials = [
   },
   {
     quote:
-      "Dulu takut mondok, pikir tidak bisa fokus belajar IT. Ternyata justru sebaliknya — jadwal pesantren bikin saya lebih disiplin mengerjakan semua tugas digital.",
-    name: "M.F.",
-    role: "Siswa Aktif · Astambul",
+      "Selama sekolah saya banyak belajar hal-hal yang sebelumnya belum pernah saya coba, terutama tentang bisnis digital. Gurunya juga cukup terbuka kalau kami ingin bertanya atau berdiskusi.",
+    name: "Muhammad Ilham",
+    role: "Alumni SMKIT Ushuluddin · Batanjung",
   },
 ];
 
@@ -50,7 +51,7 @@ export default function Quality() {
   return (
     <section id="bukti-kualitas" className="bg-background py-24">
       {/* Testimonials */}
-      <div className="max-w-xl text-center mx-auto mb-16 px-6">
+      <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
         <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
           Kata Mereka
         </p>
@@ -90,16 +91,16 @@ export default function Quality() {
       </div>
 
       {/* Achievements */}
-      <div className="max-w-xl text-center mx-auto mb-12 px-6">
+      <div className="max-w-6xl mx-auto px-6 text-center mb-12">
         <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
           Rekam Jejak
         </p>
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-          Prestasi yang Kami Banggakan
+          Apa yang Sudah Dicapai Siswa Kami
         </h2>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         {achievements.map((a, idx) => (
           <Card
             key={idx}
@@ -114,6 +115,37 @@ export default function Quality() {
             <p className="text-xs text-muted-foreground">{a.organizer}</p>
           </Card>
         ))}
+      </div>
+
+      {/* Supporting Achievement Block */}
+      <div className="max-w-6xl mx-auto px-6 mt-12">
+        <Card className="bg-secondary/20 border border-primary/15 rounded-2xl p-6 md:p-10">
+          <div className="flex flex-col md:flex-row gap-10 items-center">
+            <div className="w-full md:w-[42%]">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-secondary/20">
+                <Image
+                  src="/images/gallery/gallery-juara.webp"
+                  alt="Siswa SMKIT Ushuluddin menerima penghargaan kompetisi"
+                  className="w-full h-full object-cover"
+                  width={800}
+                  height={600}
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-[58%]">
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4">
+                Lebih dari Sekadar Sebuah Piala
+              </h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Selama beberapa tahun terakhir, siswa SMKIT Ushuluddin telah
+                mengikuti berbagai kompetisi akademik maupun non-akademik di
+                tingkat kabupaten hingga nasional. Setiap pencapaian menjadi
+                bagian dari proses belajar untuk membangun rasa percaya diri,
+                sportivitas, dan semangat terus berkembang.
+              </p>
+            </div>
+          </div>
+        </Card>
       </div>
     </section>
   );

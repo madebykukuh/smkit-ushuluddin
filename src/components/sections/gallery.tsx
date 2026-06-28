@@ -3,26 +3,34 @@
 import Image from "next/image";
 
 const galleryItems = [
-  { src: "/placeholder/gallery-lab.svg", caption: "Lab Komputer", height: 300 },
   {
-    src: "/placeholder/gallery-kelas.webp",
+    src: "/images/gallery/gallery-lingkungan.webp",
+    caption: "Lingkungan Sekolah",
+    height: 300,
+  },
+  {
+    src: "/images/gallery/gallery-kelas.webp",
     caption: "Ruang Kelas",
     height: 300,
   },
   {
-    src: "/placeholder/gallery-mesjid.webp",
+    src: "/images/gallery/gallery-asrama.webp",
+    caption: "Gedung Asrama",
+    height: 300,
+  },
+  {
+    src: "/images/gallery/gallery-mesjid.webp",
     caption: "Masjid Sekolah",
     height: 300,
   },
-  { src: "/placeholder/gallery-guru.webp", caption: "Dewan Guru", height: 300 },
   {
-    src: "/placeholder/gallery-kegiatan.webp",
+    src: "/images/gallery/gallery-kegiatan.webp",
     caption: "Kegiatan Siswa",
     height: 300,
   },
   {
-    src: "/placeholder/gallery-lingkungan.webp",
-    caption: "Lingkungan Sekolah",
+    src: "/images/gallery/gallery-guru.webp",
+    caption: "Dewan Guru",
     height: 300,
   },
 ];

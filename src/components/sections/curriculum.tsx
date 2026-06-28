@@ -36,10 +36,10 @@ export default function Curriculum() {
       </div>
 
       {/* Block A — Digital */}
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-        <div className="aspect-video rounded-2xl overflow-hidden bg-secondary shadow-md">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-24">
+        <div className="aspect-video rounded-xl overflow-hidden bg-secondary border border-secondary/20 shadow-sm">
           <Image
-            src="/placeholder/curriculum-digital.webp"
+            src="/images/school/curriculum-digital.webp"
             alt="Siswa di lab komputer"
             className="w-full h-full object-cover"
             width={1200}
@@ -58,13 +58,13 @@ export default function Curriculum() {
             toko online, merancang kampanye iklan, membuat konten promosi, dan
             menganalisis data penjualan.
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {digitalList.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-3 text-sm text-foreground"
               >
-                <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 {item}
               </li>
             ))}
@@ -73,7 +73,7 @@ export default function Curriculum() {
       </div>
 
       {/* Block B — Pesantren */}
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="order-last lg:order-first">
           <Badge className="bg-primary/10 text-primary border-0 font-semibold mb-4">
             Program Pesantren
@@ -87,21 +87,21 @@ export default function Curriculum() {
             kurikulum yang tidak tertulis di silabus, tapi tercetak di
             kepribadian.
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {pesantrenList.map((item) => (
               <li
                 key={item}
                 className="flex items-start gap-3 text-sm text-foreground"
               >
-                <CheckCircle className="w-4 h-4 text-primary mt-0.5 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-primary mt-0.5 shrink-0" />
                 {item}
               </li>
             ))}
           </ul>
         </div>
-        <div className="aspect-video rounded-2xl overflow-hidden bg-secondary shadow-md lg:order-last">
+        <div className="aspect-video rounded-xl overflow-hidden bg-secondary border border-secondary/20 shadow-sm lg:order-last">
           <Image
-            src="/placeholder/curriculum-pesantren.webp"
+            src="/images/school/curriculum-pesantren.webp"
             alt="Kegiatan ibadah dan kajian pesantren"
             className="w-full h-full object-cover"
             width={1200}
