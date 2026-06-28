@@ -54,10 +54,10 @@ export default function Philosophy() {
             </div>
             <div className="absolute -bottom-8 -right-8 bg-card rounded-2xl shadow-md px-5 py-4 border border-secondary/20 hidden sm:block">
               <p className="text-sm font-semibold text-foreground leading-tight">
-                Muhammad Kukuh R. A., S.Kom.
+                K.H. Juchran Erfan Ali
               </p>
               <p className="text-xs text-muted-foreground mt-1">
-                Kepala SMKIT Ushuluddin
+                Pimpinan Pondok Pesantren Ushuluddin
               </p>
             </div>
           </div>
