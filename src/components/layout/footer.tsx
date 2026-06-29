@@ -112,7 +112,12 @@ export default function Footer() {
             </li>
             <li>
               <span className="text-muted/60">Email: </span>
-              <span>{SITE.email}</span>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="hover:text-background transition-colors duration-200"
+              >
+                {SITE.email}
+              </a>
             </li>
             <li>
               <span className="text-muted/60">NPSN: </span>
