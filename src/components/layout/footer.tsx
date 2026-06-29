@@ -1,8 +1,28 @@
+"use client";
+
 import Image from "next/image";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { SITE } from "@/lib/constants";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isPrivacyPage = pathname === "/privacy";
+
+  if (isPrivacyPage) {
+    return (
+      <footer className="bg-foreground text-background pt-6 pb-10 border-t border-border">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-center text-xs text-muted">
+              © 2026 SMKIT Ushuluddin. Terakreditasi BAN-PDM.
+            </p>
+          </div>
+        </div>
+      </footer>
+    );
+  }
+
   return (
     <footer className="bg-foreground text-background pt-20 pb-10 border-t border-border">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
@@ -79,16 +99,23 @@ export default function Footer() {
               { label: "Kurikulum", href: "#kurikulum" },
               { label: "Kehidupan Sekolah", href: "#kehidupan-sekolah" },
               { label: "Pendaftaran", href: "#admissions" },
-            ].map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="text-sm text-muted hover:text-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary inline-block py-1"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            ].map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className={`text-sm ${
+                      isActive
+                        ? "text-background font-semibold cursor-default"
+                        : "text-muted hover:text-background"
+                    } transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary inline-block py-1`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
 
@@ -201,9 +228,17 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10 pt-8">
-        <p className="text-center text-xs text-muted">
-          © 2026 SMKIT Ushuluddin. Terakreditasi BAN-PDM.
-        </p>
+        <div className="flex flex-col items-center gap-2 text-center sm:flex-row sm:justify-center sm:gap-1">
+          <span className="text-xs text-muted">
+            © 2026 SMKIT Ushuluddin. Terakreditasi BAN-PDM.
+          </span>
+          <a
+            href="/privacy"
+            className="text-xs text-muted transition-colors duration-200 hover:text-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
+          >
+            Kebijakan Privasi
+          </a>
+        </div>
       </div>
     </footer>
   );
