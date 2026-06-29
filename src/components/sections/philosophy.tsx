@@ -7,58 +7,65 @@ export default function Philosophy() {
   return (
     <section id="filosofi" className="bg-background py-24">
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        {/* Left Content */}
         <Reveal>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
               Filosofi Kami
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground leading-tight mb-8">
+
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground mb-8">
               Pendidikan yang Baik
               <br />
               Harus Dapat Diakses
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-base mb-4">
+
+            <p className="text-base leading-relaxed text-muted-foreground mb-4">
               Berangkat dari pengalaman pribadi yang pernah merasakan sulitnya
               menempuh pendidikan, pimpinan pondok berkomitmen menghadirkan
               ruang belajar yang lebih terbuka bagi siswa-siswi dan
               santri-santriwati.
             </p>
-            <p className="text-muted-foreground leading-relaxed text-base mb-4">
+
+            <p className="text-base leading-relaxed text-muted-foreground mb-4">
               Karena itu, SMKIT Ushuluddin hadir dengan semangat pendidikan
               gratis, pendampingan yang dekat, dan lingkungan yang membentuk
-              karakter — agar kesempatan belajar tidak berhenti pada
+              karakter agar kesempatan belajar tidak berhenti karena
               keterbatasan biaya.
             </p>
-            <p className="text-muted-foreground leading-relaxed text-base">
-              Kuota 30 siswa per angkatan bukan untuk membatasi mimpi, tetapi
-              agar setiap anak benar-benar mendapat perhatian yang layak.
+
+            <p className="text-base leading-relaxed text-muted-foreground">
+              Kuota belajar yang terbatas dipilih agar setiap siswa memperoleh
+              perhatian, pendampingan, dan proses belajar yang lebih personal.
             </p>
           </div>
         </Reveal>
+
+        {/* Right Image */}
         <Reveal>
-          <div className="relative">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-secondary border border-secondary/20 shadow-sm">
+          <div className="relative max-w-md mx-auto lg:ml-auto">
+            <div className="relative overflow-hidden rounded-2xl border border-secondary/20 bg-secondary shadow-sm aspect-[3/4]">
               <Image
                 src="/images/school/philosophy-main.webp"
-                alt="Interaksi guru dan siswa"
-                className="w-full h-full object-cover"
+                alt="K.H. Juchran Erfan Ali, Pimpinan Pondok Pesantren Ushuluddin"
                 width={800}
                 height={1067}
+                className="h-full w-full object-cover"
+                priority={false}
               />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-card rounded-2xl shadow-md p-6 border border-secondary/20">
-              <p className="text-5xl font-extrabold text-primary">30</p>
-              <p className="text-sm text-muted-foreground mt-1 max-w-[120px] leading-tight">
-                Siswa per angkatan, setiap tahun
-              </p>
-            </div>
-            <div className="absolute -bottom-8 -right-8 bg-card rounded-2xl shadow-md px-5 py-4 border border-secondary/20 hidden sm:block">
-              <p className="text-sm font-semibold text-foreground leading-tight">
-                K.H. Juchran Erfan Ali
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Pimpinan Pondok Pesantren Ushuluddin
-              </p>
+
+              {/* Lower Third */}
+              <div className="absolute bottom-5 left-5 right-5">
+                <div className="rounded-xl border border-white/20 bg-white/92 backdrop-blur-md shadow-lg px-5 py-4">
+                  <p className="text-base font-bold text-foreground leading-tight">
+                    K.H. Juchran Erfan Ali
+                  </p>
+
+                  <p className="mt-1 text-sm leading-snug text-muted-foreground">
+                    Pimpinan Pondok Pesantren Ushuluddin Martapura
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </Reveal>

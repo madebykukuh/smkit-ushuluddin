@@ -105,17 +105,23 @@ export default function Quality() {
         </Reveal>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 items-stretch">
         {achievements.map((a, idx) => (
           <Reveal key={idx} delayMs={idx * 80}>
-            <Card className="bg-surface border border-secondary/60 rounded-xl p-6 hover:-translate-y-1 transition-transform shadow-none hover:shadow-sm">
-              <p className="text-[10px] font-semibold text-primary border border-primary/30 rounded-full px-2 py-1 mb-3 inline-block">
+            <Card className="h-full bg-surface border border-secondary/60 rounded-xl p-6 flex flex-col shadow-none hover:-translate-y-1 hover:shadow-sm transition-all duration-300">
+              <p className="inline-block w-fit rounded-full border border-primary/30 px-2 py-1 text-[10px] font-semibold text-primary mb-4">
                 {a.level}
               </p>
-              <p className="text-sm font-semibold text-foreground leading-snug mb-2">
-                {a.title}
+
+              <div className="flex-1">
+                <p className="text-sm font-semibold leading-snug text-foreground">
+                  {a.title}
+                </p>
+              </div>
+
+              <p className="mt-5 text-xs text-muted-foreground leading-relaxed">
+                {a.organizer}
               </p>
-              <p className="text-xs text-muted-foreground">{a.organizer}</p>
             </Card>
           </Reveal>
         ))}
