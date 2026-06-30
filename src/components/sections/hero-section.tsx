@@ -34,21 +34,26 @@ function scrollToSection(id: string) {
 function HeroMedia() {
   return (
     <>
-      <motion.div
-        className="absolute inset-0"
-        initial={{ scale: 1.03, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
+      {/* LCP image: rendered immediately, outside any JS-gated animation */}
+      <div className="absolute inset-0">
         <Image
           src="/images/hero/hero-bg.webp"
           alt="Suasana sekolah SMKIT Ushuluddin"
           fill
           className="object-cover object-center"
           priority
+          fetchPriority="high"
           sizes="100vw"
         />
-      </motion.div>
+      </div>
+      {/* Entrance overlay: opacity-only animation, does not block image paint */}
+      <motion.div
+        className="absolute inset-0 bg-card/10"
+        initial={{ opacity: 1 }}
+        animate={{ opacity: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        aria-hidden="true"
+      />
       <div className="hero-image-overlay" aria-hidden="true" />
       <div className="absolute -bottom-10 -left-16 h-80 w-80 rounded-full bg-primary/10 blur-3xl" />
     </>

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -45,6 +43,7 @@ export default function Curriculum() {
               className="w-full h-full object-cover"
               width={1200}
               height={675}
+              sizes="(min-width: 1024px) 580px, 100vw"
             />
           </div>
           <div>
@@ -108,6 +107,7 @@ export default function Curriculum() {
               className="w-full h-full object-cover"
               width={1200}
               height={675}
+              sizes="(min-width: 1024px) 580px, 100vw"
             />
           </div>
         </div>

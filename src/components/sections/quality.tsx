@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
 import { Card } from "@/components/ui/card";
@@ -79,6 +77,7 @@ export default function Quality() {
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
+                    sizes="(min-width: 768px) 45vw, 100vw"
                   />
                   <div className="absolute bottom-2 right-2 p-3 bg-black/40 backdrop-blur-sm rounded-lg">
                     <p className="text-white text-sm font-semibold">

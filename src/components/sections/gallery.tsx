@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
 
@@ -57,6 +55,7 @@ export default function Gallery() {
                 width={600}
                 height={item.height}
                 className="w-full object-cover transition-all duration-[500ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-[1.12] group-hover:brightness-[1.03]"
+                sizes="(min-width: 768px) 33vw, 50vw"
               />
               <div className="absolute bottom-3 left-3 right-3 p-3 bg-gradient-to-b from-black/25 to-black/45 backdrop-blur-md border border-white/10 rounded-lg transition-all duration-[500ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:from-black/35 group-hover:to-black/55 group-hover:backdrop-blur-lg">
                 <p className="text-white text-xs font-semibold tracking-wide">
