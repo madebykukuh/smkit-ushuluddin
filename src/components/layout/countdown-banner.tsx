@@ -65,11 +65,11 @@ export default function CountdownBanner() {
     <div className="bg-primary/90 text-primary-foreground py-2 px-4 text-center text-xs">
       <span>
         {phase === "G1 active"
-          ? `Penerimaan Gelombang 1 ditutup ${timeLeft.days}d ${formatNumber(timeLeft.hours)}j ${formatNumber(timeLeft.minutes)}m ${formatNumber(timeLeft.seconds)}d —`
-          : `Gelombang 2 (terakhir) ditutup ${timeLeft.days}d ${formatNumber(timeLeft.hours)}j ${formatNumber(timeLeft.minutes)}m ${formatNumber(timeLeft.seconds)}d —`}{" "}
+          ? `Penerimaan Gelombang 1 ditutup ${timeLeft.days}h ${formatNumber(timeLeft.hours)}j ${formatNumber(timeLeft.minutes)}m ${formatNumber(timeLeft.seconds)}d,`
+          : `Gelombang 2 (terakhir) ditutup ${timeLeft.days}h ${formatNumber(timeLeft.hours)}j ${formatNumber(timeLeft.minutes)}m ${formatNumber(timeLeft.seconds)}d,`}{" "}
         <a
           href="#admissions"
-          className="underline underline-offset-2 text-accent/90 hover:text-accent font-medium"
+          className="underline underline-offset-2 text-white hover:text-white/80 font-medium"
         >
           Informasi Pendaftaran →
         </a>

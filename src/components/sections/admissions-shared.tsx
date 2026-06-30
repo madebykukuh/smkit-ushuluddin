@@ -39,7 +39,7 @@ export function AppreciationCallout() {
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Calon siswa baru dengan prestasi juara 1, 2, atau 3 tingkat
-            kabupaten — akademik maupun non-akademik — mendapat bantuan biaya
+            kabupaten (akademik maupun non-akademik) mendapat bantuan biaya
             seragam sekolah lengkap. Sebutkan prestasi Anda saat menghubungi
             panitia.
           </p>

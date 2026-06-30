@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 
 import "./globals.css";
@@ -13,38 +13,18 @@ import NavbarSwitch from "@/components/layout/navbar-switch";
 import Footer from "@/components/layout/footer";
 import StructuredData from "../components/seo/structured-data";
 
-const inter = localFont({
+const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-sans",
+  subsets: ["latin"],
   display: "swap",
-  src: [
-    {
-      path: "../../public/fonts/inter/inter-400.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/inter/inter-500.ttf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/inter/inter-600.ttf",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/inter/inter-700.ttf",
-      weight: "700",
-      style: "normal",
-    },
-  ],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.siteUrl),
 
   title:
-    "SMKIT Ushuluddin | SMK Bisnis Digital Berbasis Pesantren — Kabupaten Banjar",
+    "SMKIT Ushuluddin | SMK Bisnis Digital Berbasis Pesantren, Kabupaten Banjar",
 
   description:
     "SMKIT Ushuluddin, sekolah kejuruan berbasis pesantren di Martapura Timur, Kabupaten Banjar. Konsentrasi Bisnis Digital, gratis SPP, terakreditasi BAN-PDM.",
@@ -66,7 +46,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "id_ID",
 
-    title: "SMKIT Ushuluddin — Membentuk Generasi Digital yang Berakhlak",
+    title: "SMKIT Ushuluddin. Membentuk Generasi Digital yang Berakhlak",
 
     description:
       "Sekolah kejuruan berbasis pesantren di Kabupaten Banjar. Konsentrasi Bisnis Digital dengan pembinaan karakter Islami.",
@@ -91,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id" className={cn("h-full", inter.variable)}>
+    <html lang="id" className={cn("h-full", plusJakartaSans.variable)}>
       <head>
         <StructuredData />
 

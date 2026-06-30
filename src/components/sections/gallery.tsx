@@ -41,9 +41,6 @@ export default function Gallery() {
     <section id="kehidupan-sekolah" className="bg-surface py-24">
       <div className="max-w-xl text-center mx-auto mb-12 px-6">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            Kehidupan Sekolah
-          </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-text-dark">
             Galeri SMKIT Ushuluddin
           </h2>
@@ -59,10 +56,12 @@ export default function Gallery() {
                 alt={item.caption}
                 width={600}
                 height={item.height}
-                className="w-full object-cover"
+                className="w-full object-cover transition-all duration-[500ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-[1.12] group-hover:brightness-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <p className="text-white text-xs font-medium">{item.caption}</p>
+              <div className="absolute bottom-3 left-3 right-3 p-3 bg-gradient-to-b from-black/25 to-black/45 backdrop-blur-md border border-white/10 rounded-lg transition-all duration-[500ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:from-black/35 group-hover:to-black/55 group-hover:backdrop-blur-lg">
+                <p className="text-white text-xs font-semibold tracking-wide">
+                  {item.caption}
+                </p>
               </div>
             </div>
           </Reveal>

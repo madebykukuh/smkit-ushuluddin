@@ -53,9 +53,6 @@ export default function Quality() {
 
       <div className="max-w-6xl mx-auto px-6 text-center mb-12">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            Rekam Jejak
-          </p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
             Apa yang Sudah Dicapai Siswa Kami
           </h2>

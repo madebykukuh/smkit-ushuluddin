@@ -25,9 +25,6 @@ export default function Curriculum() {
     <section id="kurikulum" className="bg-surface py-24">
       <div className="max-w-[720px] text-center mx-auto mb-20 px-6">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            Kurikulum
-          </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
             Dua Ekosistem. Satu Tujuan.
           </h2>

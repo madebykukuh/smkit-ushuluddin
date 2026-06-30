@@ -10,10 +10,6 @@ export default function Philosophy() {
         {/* Left Content */}
         <Reveal>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-              Filosofi Kami
-            </p>
-
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground mb-8">
               Pendidikan yang Baik
               <br />

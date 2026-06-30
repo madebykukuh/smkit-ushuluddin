@@ -57,7 +57,7 @@ function HeroMedia() {
 
 function HeroContent() {
   return (
-    <div className="relative z-10 flex min-h-screen items-center pb-32 pt-24">
+    <div className="relative z-10 flex min-h-[100dvh] items-center pb-32 pt-24">
       <div className="container mx-auto px-6 lg:px-12">
         <motion.div
           variants={containerVariants}
@@ -130,7 +130,7 @@ function HeroStats() {
               <dd className="text-base font-bold leading-tight text-primary order-first mb-1">
                 {stat.value}
               </dd>
-              <dt className="text-[11px] leading-snug text-muted-foreground">
+              <dt className="text-[12px] sm:text-[13px] leading-snug text-muted-foreground">
                 {stat.label}
               </dt>
             </div>
@@ -143,7 +143,7 @@ function HeroStats() {
 
 export default function HeroSection() {
   return (
-    <section id="beranda" className="relative min-h-screen overflow-hidden">
+    <section id="beranda" className="relative min-h-[100dvh] overflow-hidden">
       <HeroMedia />
       <HeroContent />
       <HeroStats />
