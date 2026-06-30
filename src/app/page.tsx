@@ -1,4 +1,4 @@
-import HeroSection from "@/components/sections/HeroSection";
+import HeroSection from "@/components/sections/hero-section";
 import Philosophy from "@/components/sections/philosophy";
 import Curriculum from "@/components/sections/curriculum";
 import Quality from "@/components/sections/quality";

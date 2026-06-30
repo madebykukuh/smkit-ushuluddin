@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
 
 import "./globals.css";
@@ -13,9 +13,31 @@ import NavbarSwitch from "@/components/layout/navbar-switch";
 import Footer from "@/components/layout/footer";
 import StructuredData from "../components/seo/structured-data";
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
   variable: "--font-sans",
+  display: "swap",
+  src: [
+    {
+      path: "../../public/fonts/inter/inter-400.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/inter/inter-500.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/inter/inter-600.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/inter/inter-700.ttf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -55,7 +77,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: "/documents/og-image.svg",
+        url: "/documents/og-image.webp",
         width: 1200,
         height: 630,
       },

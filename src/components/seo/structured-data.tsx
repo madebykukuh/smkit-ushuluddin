@@ -28,7 +28,7 @@ export default function StructuredData() {
       streetAddress: "Tambak Anyar Ilir",
       addressLocality: "Martapura Timur",
       addressRegion: "Kalimantan Selatan",
-      postalCode: "",
+      postalCode: "70615",
       addressCountry: "ID",
     },
 
@@ -45,12 +45,12 @@ export default function StructuredData() {
     },
   };
 
+  const jsonLd = JSON.stringify(schema).replace(/</g, "\\u003c");
+
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(schema),
-      }}
+      dangerouslySetInnerHTML={{ __html: jsonLd }}
     />
   );
 }

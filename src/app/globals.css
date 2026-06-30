@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -39,6 +38,8 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-surface: var(--card);
+  --color-text-dark: var(--card-foreground);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -217,5 +218,46 @@
   .reveal-item.revealed {
     opacity: 1;
     transform: translateY(0);
+  }
+  .reveal-delay-0 {
+    --reveal-delay: 0ms;
+  }
+  .reveal-delay-80 {
+    --reveal-delay: 80ms;
+  }
+  .reveal-delay-160 {
+    --reveal-delay: 160ms;
+  }
+  .reveal-delay-240 {
+    --reveal-delay: 240ms;
+  }
+  .reveal-delay-320 {
+    --reveal-delay: 320ms;
+  }
+  .reveal-delay-400 {
+    --reveal-delay: 400ms;
+  }
+
+  .hero-image-overlay {
+    @apply pointer-events-none absolute inset-0;
+    background: linear-gradient(
+      to right,
+      color-mix(in srgb, var(--card) 93%, transparent) 0%,
+      color-mix(in srgb, var(--card) 85%, transparent) 22%,
+      color-mix(in srgb, var(--card) 45%, transparent) 42%,
+      color-mix(in srgb, var(--card) 8%, transparent) 58%,
+      transparent 68%
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @layer components {
+    .reveal-item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+      will-change: auto;
+    }
   }
 }

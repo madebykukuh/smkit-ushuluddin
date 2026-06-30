@@ -1,31 +1,10 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Quote } from "lucide-react";
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
-
-const testimonials = [
-  {
-    quote:
-      "Anak saya awalnya belum terbiasa menggunakan komputer untuk belajar. Sekarang sudah lebih percaya diri saat mengerjakan tugas digital.",
-    name: "Ibu N.H.",
-    role: "Wali Murid · Martapura Timur",
-  },
-  {
-    quote:
-      "Saya pilih SMKIT Ushuluddin karena gratis SPP sangat membantu. Tapi yang tidak saya duga, gurunya benar-benar serius mendampingi.",
-    name: "Bapak A.R.",
-    role: "Wali Murid · Karang Intan",
-  },
-  {
-    quote:
-      "Selama sekolah saya banyak belajar hal-hal yang sebelumnya belum pernah saya coba, terutama tentang bisnis digital. Gurunya juga cukup terbuka kalau kami ingin bertanya atau berdiskusi.",
-    name: "Muhammad Ilham",
-    role: "Alumni SMKIT Ushuluddin · Batanjung",
-  },
-];
+import { Card } from "@/components/ui/card";
+import { TestimonialItem, testimonials } from "./quality-testimonial";
+import { Achievement } from "./admissions-shared";
 
 const achievements = [
   {
@@ -53,7 +32,6 @@ const achievements = [
 export default function Quality() {
   return (
     <section id="bukti-kualitas" className="bg-background py-24">
-      {/* Testimonials */}
       <div className="max-w-6xl mx-auto px-6 mb-16 text-center">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -68,28 +46,7 @@ export default function Quality() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 items-stretch">
         {testimonials.map((t, idx) => (
           <Reveal key={idx} delayMs={idx * 80}>
-            <Card className="bg-surface border border-secondary/60 rounded-2xl p-8 flex flex-col justify-between h-full shadow-none hover:shadow-md transition-shadow">
-              <div className="flex-1">
-                <Quote className="w-7 h-7 text-primary/20 mb-6" />
-                <p className="text-foreground text-sm leading-relaxed italic">
-                  {t.quote}
-                </p>
-              </div>
-              <div className="flex items-center gap-3 mt-8 pt-6 border-t border-secondary/50">
-                <Avatar className="w-10 h-10 bg-secondary">
-                  <AvatarFallback className="text-primary font-semibold text-xs">
-                    {t.name.split(" ")[0][0]}
-                    {t.name.split(" ")[1]?.[0] || ""}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {t.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </div>
-              </div>
-            </Card>
+            <TestimonialItem testimonial={t} />
           </Reveal>
         ))}
       </div>
@@ -108,21 +65,7 @@ export default function Quality() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8 items-stretch">
         {achievements.map((a, idx) => (
           <Reveal key={idx} delayMs={idx * 80}>
-            <Card className="h-full bg-surface border border-secondary/60 rounded-xl p-6 flex flex-col shadow-none hover:-translate-y-1 hover:shadow-sm transition-all duration-300">
-              <p className="inline-block w-fit rounded-full border border-primary/30 px-2 py-1 text-[10px] font-semibold text-primary mb-4">
-                {a.level}
-              </p>
-
-              <div className="flex-1">
-                <p className="text-sm font-semibold leading-snug text-foreground">
-                  {a.title}
-                </p>
-              </div>
-
-              <p className="mt-5 text-xs text-muted-foreground leading-relaxed">
-                {a.organizer}
-              </p>
-            </Card>
+            <Achievement {...a} />
           </Reveal>
         ))}
       </div>
