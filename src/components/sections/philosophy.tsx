@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
 
@@ -51,7 +49,7 @@ export default function Philosophy() {
                 width={800}
                 height={1067}
                 className="h-full w-full object-cover"
-                priority={false}
+                sizes="(min-width: 1024px) 480px, 100vw"
               />
 
               {/* Lower Third */}
