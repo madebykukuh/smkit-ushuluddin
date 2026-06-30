@@ -52,7 +52,7 @@ export const testimonials = [
   {
     quote:
       "Selama sekolah saya banyak belajar hal-hal yang sebelumnya belum pernah saya coba, terutama tentang bisnis digital. Gurunya juga cukup terbuka kalau kami ingin bertanya atau berdiskusi.",
-    name: "Muhammad Ilgal",
+    name: "Muhammad Ilhal",
     role: "Alumni SMKIT Ushuluddin · Batanjung",
   },
 ];
