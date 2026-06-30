@@ -44,6 +44,7 @@ function HeroMedia() {
           priority
           fetchPriority="high"
           sizes="100vw"
+          quality={70}
         />
       </div>
       {/* Entrance overlay: opacity-only animation, does not block image paint */}
