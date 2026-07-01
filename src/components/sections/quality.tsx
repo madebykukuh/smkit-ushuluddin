@@ -84,6 +84,7 @@ export default function Quality() {
                   <ImageLowerThird
                     title="Akhmad Alfi"
                     subtitle={<>Juara 1 FLS3N Cipta Puisi Kab. Banjar 2026</>}
+                    mobileSmall
                   />
                 </div>
               </div>
