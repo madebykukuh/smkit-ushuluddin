@@ -8,37 +8,31 @@ const galleryItems = [
   {
     src: "/images/gallery/gallery-lingkungan.webp",
     title: "Lingkungan Sekolah",
-    subtitle: "Area belajar dan asrama terpadu",
     height: 300,
   },
   {
     src: "/images/gallery/gallery-kelas.webp",
     title: "Ruang Kelas",
-    subtitle: "Fasilitas belajar modern",
     height: 300,
   },
   {
     src: "/images/gallery/gallery-asrama.webp",
     title: "Gedung Asrama",
-    subtitle: "Tempat tinggal nyaman",
     height: 300,
   },
   {
     src: "/images/gallery/gallery-mesjid.webp",
     title: "Masjid Sekolah",
-    subtitle: "Tempat ibadah santri",
     height: 300,
   },
   {
     src: "/images/gallery/gallery-kegiatan.webp",
     title: "Kegiatan Siswa",
-    subtitle: "Kehidupan ekstrakurikuler",
     height: 300,
   },
   {
     src: "/images/gallery/gallery-guru.webp",
     title: "Dewan Guru",
-    subtitle: "Guru berkualitas",
     height: 300,
   },
 ];
@@ -65,7 +59,7 @@ export default function Gallery() {
                 height={item.height}
                 className="w-full object-cover transition-all duration-[500ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-[1.12] group-hover:brightness-[1.03]"
               />
-              <ImageLowerThird title={item.title} subtitle={item.subtitle} />
+              <ImageLowerThird title={item.title} size="compact" />
             </div>
           </Reveal>
         ))}
