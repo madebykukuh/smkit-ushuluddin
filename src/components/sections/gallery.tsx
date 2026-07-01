@@ -59,7 +59,7 @@ export default function Gallery() {
                 height={item.height}
                 className="w-full object-cover transition-all duration-[500ms] ease-[cubic-bezier(.22,.61,.36,1)] group-hover:scale-[1.12] group-hover:brightness-[1.03]"
               />
-              <ImageLowerThird title={item.title} position="top" size="badge" />
+              <ImageLowerThird title={item.title} size="chip" />
             </div>
           </Reveal>
         ))}
