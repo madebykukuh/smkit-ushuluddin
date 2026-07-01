@@ -38,6 +38,7 @@ export function ImageLowerThird({
       card: "rounded-lg border border-white/20 bg-white/85 backdrop-blur-lg shadow-md px-3 py-1.5 md:px-3 md:py-1.5",
       title:
         "text-[11px] md:text-[12px] font-semibold leading-tight text-foreground",
+      subtitle: "",
     },
   } as const;
 
@@ -47,7 +48,7 @@ export function ImageLowerThird({
     <div className={cn(styles.container, containerClassName)}>
       <div className={cn(styles.card, className)}>
         <p className={styles.title}>{title}</p>
-        {subtitle && variant !== "chip" && (
+        {subtitle && variant !== "chip" && "subtitle" in styles && (
           <p className={styles.subtitle}>{subtitle}</p>
         )}
       </div>
