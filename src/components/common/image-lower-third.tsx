@@ -51,10 +51,9 @@ export function ImageLowerThird({
   const titleClasses = cn(
     "font-semibold leading-tight",
     size === "chip" ? (mobileSmall ? "text-[10px]" : "text-[11px]") : "",
-    size === "default" ? (mobileSmall ? "text-sm" : "text-base") : "",
+    size === "default" ? (mobileSmall ? "text-sm" : "text-[12px]") : "",
     size === "compact" ? "text-sm" : "",
     size === "badge" ? "text-sm" : "",
-    size === "default" ? (mobileSmall ? "text-sm" : "text-[12px]") : "",
   );
 
   const subtitleClasses = cn(
