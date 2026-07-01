@@ -8,7 +8,7 @@ interface ImageLowerThirdProps {
   className?: string;
   containerClassName?: string;
   position?: "bottom" | "top" | "left" | "right";
-  size?: "default" | "compact";
+  size?: "default" | "compact" | "badge";
 }
 
 export function ImageLowerThird({
@@ -24,15 +24,23 @@ export function ImageLowerThird({
     top: `absolute top-5 left-5 right-5`,
     left: `absolute bottom-5 left-5 top-5`,
     right: `absolute bottom-5 right-5 top-5`,
+    badge: `absolute top-3 left-3 w-fit`,
   };
 
   const defaultClasses = cn(
     "rounded-xl border border-white/20 bg-white/92 backdrop-blur-md shadow-lg",
-    size === "default" ? "px-5 py-4" : "px-3 py-2",
+    size === "default" ? "px-5 py-4" : "",
+    size === "compact" ? "px-3 py-2" : "",
+    size === "badge" ? "px-3 py-1.5 rounded-full backdrop-blur-xl" : "",
   );
 
   return (
-    <div className={cn(positionClasses[position], containerClassName)}>
+    <div
+      className={cn(
+        positionClasses[position === "badge" ? "badge" : position],
+        containerClassName,
+      )}
+    >
       <div className={cn(defaultClasses, className)}>
         <p
           className={cn(
