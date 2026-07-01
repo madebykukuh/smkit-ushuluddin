@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
+import { ImageLowerThird } from "@/components/common/image-lower-third";
 
 export default function Philosophy() {
   return (
@@ -8,10 +11,6 @@ export default function Philosophy() {
         {/* Left Content */}
         <Reveal>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-              Filosofi Kami
-            </p>
-
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight text-foreground mb-8">
               Pendidikan yang Baik
               <br />
@@ -49,21 +48,14 @@ export default function Philosophy() {
                 width={800}
                 height={1067}
                 className="h-full w-full object-cover"
-                sizes="(min-width: 1024px) 480px, 100vw"
+                priority={false}
               />
 
               {/* Lower Third */}
-              <div className="absolute bottom-5 left-5 right-5">
-                <div className="rounded-xl border border-white/20 bg-white/92 backdrop-blur-md shadow-lg px-5 py-4">
-                  <p className="text-base font-bold text-foreground leading-tight">
-                    K.H. Juchran Erfan Ali
-                  </p>
-
-                  <p className="mt-1 text-sm leading-snug text-muted-foreground">
-                    Pimpinan Pondok Pesantren Ushuluddin Martapura
-                  </p>
-                </div>
-              </div>
+              <ImageLowerThird
+                title="K.H. Juchran Erfan Ali"
+                subtitle="Pimpinan Pondok Pesantren Ushuluddin Martapura"
+              />
             </div>
           </div>
         </Reveal>

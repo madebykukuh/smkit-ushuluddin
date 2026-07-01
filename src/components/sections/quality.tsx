@@ -1,8 +1,11 @@
+"use client";
+
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
 import { Card } from "@/components/ui/card";
 import { TestimonialItem, testimonials } from "./quality-testimonial";
 import { Achievement } from "./admissions-shared";
+import { ImageLowerThird } from "@/components/common/image-lower-third";
 
 const achievements = [
   {
@@ -51,9 +54,6 @@ export default function Quality() {
 
       <div className="max-w-6xl mx-auto px-6 text-center mb-12">
         <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            Rekam Jejak
-          </p>
           <h2 className="text-2xl md:text-3xl font-bold tracking-tight text-foreground">
             Apa yang Sudah Dicapai Siswa Kami
           </h2>
@@ -76,20 +76,21 @@ export default function Quality() {
                 <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-secondary/20 relative">
                   <Image
                     src="/images/gallery/gallery-juara.webp"
-                    alt="Siswa SMKIT Ushuluddin menerima penghargaan kompetisi"
+                    alt="Akhmad Alfi - Juara 1 FLS3N Cipta Puisi Kabupaten Banjar 2026"
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
-                    sizes="(min-width: 768px) 45vw, 100vw"
                   />
-                  <div className="absolute bottom-2 right-2 p-3 bg-black/40 backdrop-blur-sm rounded-lg">
-                    <p className="text-white text-sm font-semibold">
-                      Akhmad Alfi
-                    </p>
-                    <p className="text-white/80 text-xs">
-                      XII &ndash; Pemasaran
-                    </p>
-                  </div>
+                  <ImageLowerThird
+                    title="Akhmad Alfi"
+                    subtitle={
+                      <>
+                        Juara 1 FLS3N Cipta Puisi
+                        <br />
+                        Kabupaten Banjar 2026
+                      </>
+                    }
+                  />
                 </div>
               </div>
               <div className="w-full md:w-[58%]">
