@@ -83,13 +83,7 @@ export default function Quality() {
                   />
                   <ImageLowerThird
                     title="Akhmad Alfi"
-                    subtitle={
-                      <>
-                        Juara 1 FLS3N Cipta Puisi
-                        <br />
-                        Kabupaten Banjar 2026
-                      </>
-                    }
+                    subtitle={<>Juara 1 FLS3N Cipta Puisi Kab. Banjar 2026</>}
                   />
                 </div>
               </div>
