@@ -7,9 +7,7 @@ interface ImageLowerThirdProps {
   subtitle?: React.ReactNode;
   className?: string;
   containerClassName?: string;
-  position?: "bottom" | "top" | "left" | "right";
-  size?: "default" | "compact" | "badge" | "chip";
-  mobileSmall?: boolean;
+  variant: "philosophy" | "achievement" | "chip";
 }
 
 export function ImageLowerThird({
@@ -17,67 +15,40 @@ export function ImageLowerThird({
   subtitle,
   className,
   containerClassName,
-  position = "bottom",
-  size = "default",
-  mobileSmall = false,
+  variant,
 }: ImageLowerThirdProps) {
-  const positionClasses = {
-    bottom: mobileSmall
-      ? `absolute bottom-3 left-2 right-2`
-      : `absolute bottom-3 left-3 right-3`,
-    top: `absolute top-3 left-3 right-3`,
-    left: `absolute bottom-3 left-3 top-3`,
-    right: `absolute bottom-3 right-3 top-3`,
-    badge: `absolute top-2 left-3 w-fit`,
-    chip: mobileSmall
-      ? `absolute bottom-2 left-2 w-fit`
-      : `absolute bottom-3 left-3 w-fit`,
-  };
+  const variants = {
+    philosophy: {
+      container: "absolute bottom-5 left-5 right-5",
+      card: "rounded-xl border border-white/20 bg-white/92 backdrop-blur-md shadow-lg px-5 py-4",
+      title: "text-base font-bold text-foreground leading-tight",
+      subtitle: "mt-1 text-sm leading-snug text-muted-foreground",
+    },
+    achievement: {
+      container:
+        "absolute bottom-3 left-3 right-3 md:bottom-3 md:left-4 md:right-4",
+      card: "rounded-xl border border-white/20 bg-white/92 backdrop-blur-md shadow-lg px-4 py-3",
+      title: "text-base font-bold text-foreground leading-tight",
+      subtitle:
+        "mt-1 text-[11px] md:text-[12px] leading-snug text-muted-foreground",
+    },
+    chip: {
+      container:
+        "absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 w-fit md:w-fit",
+      card: "rounded-lg border border-white/20 bg-white/85 backdrop-blur-lg shadow-md px-3 py-1.5 md:px-3 md:py-1.5",
+      title:
+        "text-[11px] md:text-[12px] font-semibold leading-tight text-foreground",
+    },
+  } as const;
 
-  const defaultClasses = cn(
-    "border border-white/20 bg-white/85 backdrop-blur-lg shadow-md",
-    size === "default"
-      ? mobileSmall
-        ? "rounded-xl px-3 py-2"
-        : "rounded-xl px-4 py-3"
-      : "",
-    size === "compact" ? "rounded-xl px-2 py-1" : "",
-    size === "badge" ? "px-3 py-1.5 rounded-full backdrop-blur-xl" : "",
-    size === "chip"
-      ? "px-3 py-1.5 rounded-xl backdrop-blur-lg bg-white/85"
-      : "",
-  );
-
-  const titleClasses = cn(
-    "font-semibold leading-tight",
-    size === "chip" ? (mobileSmall ? "text-[10px]" : "text-[11px]") : "",
-    size === "default" ? (mobileSmall ? "text-sm" : "text-[12px]") : "",
-    size === "compact" ? "text-sm" : "",
-    size === "badge" ? "text-sm" : "",
-  );
-
-  const subtitleClasses = cn(
-    "leading-snug text-muted-foreground",
-    mobileSmall ? "text-[11px]" : "text-[12px]",
-  );
+  const styles = variants[variant];
 
   return (
-    <div
-      className={cn(
-        positionClasses[
-          position === "badge"
-            ? "badge"
-            : position === "chip"
-              ? "chip"
-              : position
-        ],
-        containerClassName,
-      )}
-    >
-      <div className={cn(defaultClasses, className)}>
-        <p className={titleClasses}>{title}</p>
-        {size === "default" && subtitle && (
-          <p className={cn(subtitleClasses, "mt-0.5")}>{subtitle}</p>
+    <div className={cn(styles.container, containerClassName)}>
+      <div className={cn(styles.card, className)}>
+        <p className={styles.title}>{title}</p>
+        {subtitle && variant !== "chip" && (
+          <p className={styles.subtitle}>{subtitle}</p>
         )}
       </div>
     </div>

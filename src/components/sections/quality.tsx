@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { Reveal } from "@/components/common/reveal";
 import { Card } from "@/components/ui/card";
@@ -80,11 +78,12 @@ export default function Quality() {
                     className="w-full h-full object-cover"
                     width={800}
                     height={600}
+                    sizes="(min-width: 768px) 45vw, 100vw"
                   />
                   <ImageLowerThird
+                    variant="achievement"
                     title="Akhmad Alfi"
-                    subtitle={<>Juara 1 FLS3N Cipta Puisi Kab. Banjar 2026</>}
-                    mobileSmall
+                    subtitle="Juara 1 FLS3N Cipta Puisi Kab. Banjar 2026"
                   />
                 </div>
               </div>
