@@ -23,36 +23,43 @@ export function ImageLowerThird({
 }: ImageLowerThirdProps) {
   const positionClasses = {
     bottom: mobileSmall
-      ? `absolute bottom-4 left-4 right-4`
-      : `absolute bottom-5 left-5 right-5`,
-    top: `absolute top-5 left-5 right-5`,
-    left: `absolute bottom-5 left-5 top-5`,
-    right: `absolute bottom-5 right-5 top-5`,
-    badge: `absolute top-3 left-3 w-fit`,
-    chip: `absolute bottom-3 left-3 w-fit`,
+      ? `absolute bottom-3 left-2 right-2`
+      : `absolute bottom-3 left-3 right-3`,
+    top: `absolute top-3 left-3 right-3`,
+    left: `absolute bottom-3 left-3 top-3`,
+    right: `absolute bottom-3 right-3 top-3`,
+    badge: `absolute top-2 left-3 w-fit`,
+    chip: mobileSmall
+      ? `absolute bottom-2 left-2 w-fit`
+      : `absolute bottom-3 left-3 w-fit`,
   };
 
   const defaultClasses = cn(
-    "rounded-xl border border-white/20 bg-white/92 backdrop-blur-md shadow-lg",
-    size === "default" ? (mobileSmall ? "px-4 py-2" : "px-5 py-4") : "",
-    size === "compact" ? "px-3 py-2" : "",
+    "border border-white/20 bg-white/85 backdrop-blur-lg shadow-md",
+    size === "default"
+      ? mobileSmall
+        ? "rounded-xl px-3 py-2"
+        : "rounded-xl px-4 py-3"
+      : "",
+    size === "compact" ? "rounded-xl px-2 py-1" : "",
     size === "badge" ? "px-3 py-1.5 rounded-full backdrop-blur-xl" : "",
     size === "chip"
-      ? "px-4 py-1.5 rounded-2xl backdrop-blur-xl bg-white/75"
+      ? "px-3 py-1.5 rounded-xl backdrop-blur-lg bg-white/85"
       : "",
   );
 
   const titleClasses = cn(
     "font-semibold leading-tight",
-    size === "chip" ? "text-[11px]" : "",
+    size === "chip" ? (mobileSmall ? "text-[10px]" : "text-[11px]") : "",
     size === "default" ? (mobileSmall ? "text-sm" : "text-base") : "",
     size === "compact" ? "text-sm" : "",
     size === "badge" ? "text-sm" : "",
+    size === "default" ? (mobileSmall ? "text-sm" : "text-[12px]") : "",
   );
 
   const subtitleClasses = cn(
     "leading-snug text-muted-foreground",
-    mobileSmall ? "text-[11px]" : "text-sm",
+    mobileSmall ? "text-[11px]" : "text-[12px]",
   );
 
   return (
